@@ -402,10 +402,10 @@ void scrypt_core(uint32_t *X, uint32_t *V, int N);
 void scrypt_core(uint32_t *X, uint32_t *V, int N);
 #if defined(__ARM_NEON__)
 #undef HAVE_SHA256_4WAY
-#define SCRYPT_MAX_WAYS 3
-#define HAVE_SCRYPT_3WAY 1
-#define scrypt_best_throughput() 3
-void scrypt_core_3way(uint32_t *X, uint32_t *V, int N);
+#define SCRYPT_MAX_WAYS 1
+//#define HAVE_SCRYPT_3WAY 1
+#define scrypt_best_throughput() 1
+void scrypt_core(uint32_t *X, uint32_t *V, int N);
 #endif
 
 #else
